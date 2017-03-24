@@ -9,7 +9,5 @@ import java.util.List;
 @Repository
 public interface RegisteredSchedulerRepository extends CrudRepository<RegisteredScheduler, String> {
 
-    List<RegisteredScheduler> findBySchedulerName(String name);
-
     List<RegisteredScheduler> findBySchedulerType(String schedulerType);
 }

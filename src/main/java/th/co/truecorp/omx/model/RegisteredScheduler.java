@@ -38,7 +38,7 @@ public class RegisteredScheduler implements Serializable {
     public RegisteredScheduler() {
     }
 
-    static RegisteredScheduler newInstanceOfMasterScheduler() {
+    public static RegisteredScheduler newInstanceOfMasterScheduler() {
         return new RegisteredScheduler(MASTER_SCHEDULER_TYPE);
     }
 

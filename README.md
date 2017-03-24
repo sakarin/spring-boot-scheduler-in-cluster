@@ -1,4 +1,6 @@
-# scheduled-in-cluster
+# spring-boot-scheduler-in-cluster
+
+This Project port from scheduled-in-cluster(https://github.com/bgawel/scheduled-in-cluster) h2db base to redis.
 
 This is a scheduler implementation based on Spring scheduling which executes jobs only on one node in a cluster environment.
 Each node tries to register a scheduler; the first one wins, the rest ones are disabled.

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import th.co.truecorp.omx.model.RegisteredScheduler;
+import th.co.truecorp.omx.services.RegisteredSchedulerService;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ public class RegisteredSchedulerTests {
     @Autowired
     private RegisteredSchedulerRepository schedulerRepository;
 
+    @Autowired
+    RegisteredSchedulerService registeredSchedulerService;
 
     @Test
     public void newSchedulerTest() {
@@ -29,9 +32,10 @@ public class RegisteredSchedulerTests {
     }
 
     @Test
-    public void findSchedulerByName(){
-        List<RegisteredScheduler> schedulers = schedulerRepository.findBySchedulerName("Node1");
-        assertEquals(schedulers.get(0).getSchedulerName(), "Node1");
+    public void findMasterSchedulerTest() {
+        RegisteredScheduler scheduler = registeredSchedulerService.findMasterScheduler();
+        assertEquals(scheduler.getSchedulerType(), RegisteredScheduler.MASTER_SCHEDULER_TYPE);
     }
+
 
 }

@@ -12,7 +12,7 @@ public class RegisteredScheduler implements Serializable {
 
     private static final long serialVersionUID = -6666637843591286669L;
 
-    static final String MASTER_SCHEDULER_TYPE = "M";
+    public static final String MASTER_SCHEDULER_TYPE = "M";
 
     @Id
     private String id;
